@@ -22,7 +22,7 @@ const Hero = () => {
                 Find a Doctor
               </Button>
               <Button variant="outline" className="border-medical-red text-medical-red hover:bg-medical-red/5 text-base py-6 px-8">
-                View Services
+                Upload Image
               </Button>
             </div>
             <div className="flex items-center gap-6 pt-6">
