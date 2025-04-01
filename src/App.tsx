@@ -12,6 +12,7 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import AppointmentPage from "./pages/Appointment";
 import ProductsPage from "./pages/Products";
+import UploadImage from "./pages/UploadImage";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/doctors" element={<DoctorsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/upload-image" element={<UploadImage />} />
           <Route path="/appointment" element={<AppointmentPage />} />
           <Route path="/products" element={<ProductsPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

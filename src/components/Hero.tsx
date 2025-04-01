@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate()
   return (
     <div className="relative bg-white overflow-hidden">
       <div className="medical-container">
@@ -21,7 +23,7 @@ const Hero = () => {
               <Button className="bg-medical-red hover:bg-medical-red/90 text-white text-base py-6 px-8">
                 Find a Doctor
               </Button>
-              <Button variant="outline" className="border-medical-red text-medical-red hover:bg-medical-red/5 text-base py-6 px-8">
+              <Button onClick={() => navigate("/upload-image")} variant="outline" className="border-medical-red text-medical-red hover:bg-medical-red/5 text-base py-6 px-8">
                 Upload Image
               </Button>
             </div>
@@ -46,9 +48,9 @@ const Hero = () => {
             <div className="aspect-square max-w-lg mx-auto rounded-full overflow-hidden bg-accent relative">
               <div className="absolute inset-0 bg-gradient-to-br from-medical-red/30 to-transparent rounded-full"></div>
               <div className="absolute -right-16 -bottom-16 w-64 h-64 bg-medical-red/20 rounded-full"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" 
-                alt="Doctor with patient" 
+              <img
+                src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                alt="Doctor with patient"
                 className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
               />
             </div>
