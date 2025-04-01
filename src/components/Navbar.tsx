@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Menu, X } from 'lucide-react';
+import { Heart, Menu, X, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -23,9 +23,12 @@ const Navbar = () => {
             <Link to="/doctors" className="text-medical-black hover:text-medical-red font-medium">Doctors</Link>
             <Link to="/about" className="text-medical-black hover:text-medical-red font-medium">About</Link>
             <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium">Contact</Link>
-            <Button className="bg-medical-red hover:bg-medical-red/90 text-white">
-              Book Appointment
-            </Button>
+            <Link to="/appointment">
+              <Button className="bg-medical-red hover:bg-medical-red/90 text-white flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                Book Appointment
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile Navigation Toggle */}
@@ -45,9 +48,12 @@ const Navbar = () => {
               <Link to="/doctors" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Doctors</Link>
               <Link to="/about" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">About</Link>
               <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Contact</Link>
-              <Button className="bg-medical-red hover:bg-medical-red/90 text-white w-full mt-2">
-                Book Appointment
-              </Button>
+              <Link to="/appointment" className="w-full mt-2">
+                <Button className="bg-medical-red hover:bg-medical-red/90 text-white w-full flex items-center justify-center gap-2">
+                  <Calendar className="h-4 w-4" />
+                  Book Appointment
+                </Button>
+              </Link>
             </div>
           </div>
         )}
