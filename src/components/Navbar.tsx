@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Menu, X, Calendar } from 'lucide-react';
+import { Heart, Menu, X, Calendar, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -21,6 +21,7 @@ const Navbar = () => {
             <Link to="/" className="text-medical-black hover:text-medical-red font-medium">Home</Link>
             <Link to="/services" className="text-medical-black hover:text-medical-red font-medium">Services</Link>
             <Link to="/doctors" className="text-medical-black hover:text-medical-red font-medium">Doctors</Link>
+            <Link to="/products" className="text-medical-black hover:text-medical-red font-medium">Products</Link>
             <Link to="/about" className="text-medical-black hover:text-medical-red font-medium">About</Link>
             <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium">Contact</Link>
             <Link to="/appointment">
@@ -46,6 +47,7 @@ const Navbar = () => {
               <Link to="/" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Home</Link>
               <Link to="/services" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Services</Link>
               <Link to="/doctors" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Doctors</Link>
+              <Link to="/products" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Products</Link>
               <Link to="/about" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">About</Link>
               <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Contact</Link>
               <Link to="/appointment" className="w-full mt-2">
