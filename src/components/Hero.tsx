@@ -14,7 +14,7 @@ const Hero = () => {
               <span className="text-medical-red font-medium text-sm">Your Health, Our Priority</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-medical-black leading-tight">
-              Quality <span className="text-medical-red">Healthcare</span> For You & Your Family
+              Quality <span className="text-medical-red">Cancer Evaluation</span> For You & Your Family
             </h1>
             <p className="text-gray-600 text-lg md:pr-12">
               We provide comprehensive medical services to help you stay healthy and recover quickly. Our team of experts is dedicated to your well-being.

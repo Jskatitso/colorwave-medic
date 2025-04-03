@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Heart, Menu, X, Calendar, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const Navbar = () => {
+const Navbar = ({ isModalOpen, setIsModalOpen }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
             <Heart className="h-8 w-8 text-medical-red" />
             <span className="font-bold text-xl text-medical-black">MediCare</span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/" className="text-medical-black hover:text-medical-red font-medium">Home</Link>
@@ -24,14 +24,12 @@ const Navbar = () => {
             <Link to="/products" className="text-medical-black hover:text-medical-red font-medium">Products</Link>
             <Link to="/about" className="text-medical-black hover:text-medical-red font-medium">About</Link>
             <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium">Contact</Link>
-            <Link to="/appointment">
-              <Button className="bg-medical-red hover:bg-medical-red/90 text-white flex items-center gap-2">
+              <Button onClick={() => setIsModalOpen(true)} className="bg-medical-red hover:bg-medical-red/90 text-white w-full flex items-center justify-center gap-2">
                 <Calendar className="h-4 w-4" />
                 Book Appointment
               </Button>
-            </Link>
           </div>
-          
+
           {/* Mobile Navigation Toggle */}
           <div className="md:hidden">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-medical-black">
@@ -39,7 +37,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-100">
@@ -50,12 +48,10 @@ const Navbar = () => {
               <Link to="/products" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Products</Link>
               <Link to="/about" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">About</Link>
               <Link to="/contact" className="text-medical-black hover:text-medical-red font-medium px-2 py-1">Contact</Link>
-              <Link to="/appointment" className="w-full mt-2">
-                <Button className="bg-medical-red hover:bg-medical-red/90 text-white w-full flex items-center justify-center gap-2">
-                  <Calendar className="h-4 w-4" />
-                  Book Appointment
-                </Button>
-              </Link>
+              <Button onClick={() => setIsModalOpen(true)} className="bg-medical-red hover:bg-medical-red/90 text-white w-full flex items-center justify-center gap-2">
+                <Calendar className="h-4 w-4" />
+                Book Appointment
+              </Button>
             </div>
           </div>
         )}

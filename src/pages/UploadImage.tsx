@@ -1,16 +1,22 @@
 
 import Navbar from '@/components/Navbar'
 import { CloudUpload, TrashIcon } from 'lucide-react'
-import { FadeLoader } from "react-spinners"
 import { useState } from 'react'
 import LoadingModal from '@/components/LoadingModal'
+import { BACKEND_URL } from '@/configs/constants'
+import axios from 'axios'
+import AppointmentModal from '@/components/AppointmentModal'
+import { useNavigate, useNavigation } from 'react-router-dom'
 
 export default function UploadImage() {
   const [image, setImage] = useState(null)
+  const [imageFile, setImageFile] = useState(null)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
 
   const handleImageChange = (event) => {
     const file = event.target.files[0]
+    setImageFile(file)
     if (file) {
       setImage(URL.createObjectURL(file))
     }
@@ -18,11 +24,16 @@ export default function UploadImage() {
 
   const handleUpload = async (e) => {
     setLoading(true)
+    const formData = new FormData();
+    formData.append("image", imageFile);
+    const res = await axios.post(`${BACKEND_URL}/upload`, formData)
+    console.log(res)
+    navigate("/results", { state: { image: image, classifications: res.data.main, id: res.data.id } })
   }
 
   return (
     <>
-      <Navbar />
+      <Navbar isModalOpen={null} setIsModalOpen={null} />
       <div className='mt-8 py-16 px-3'>
         {image ? (
           <div className="flex flex-col items-center">

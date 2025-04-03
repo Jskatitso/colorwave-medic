@@ -13,6 +13,7 @@ import ContactPage from "./pages/Contact";
 import AppointmentPage from "./pages/Appointment";
 import ProductsPage from "./pages/Products";
 import UploadImage from "./pages/UploadImage";
+import ImageResult from "./pages/ImageResult";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/upload-image" element={<UploadImage />} />
           <Route path="/appointment" element={<AppointmentPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/results" element={<ImageResult />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
