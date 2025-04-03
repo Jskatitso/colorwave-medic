@@ -1,1 +1,1 @@
-export const BACKEND_URL: string = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+export const BACKEND_URL: string = "https://ai-project-yaub.onrender.com";
